@@ -25,7 +25,7 @@
 
                         @else
 
-                        <div>Nothing Here</div>
+                        <div>Nothing to see here yet...</div>
                         @endif
                     </table>
                 </div>

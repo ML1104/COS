@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/jobs/create', 'HomeController@create')->name('form');
 
-Route::post('/jobs', 'HomeController@post');
+Route::post('/jobs', 'HomeController@post', 'JobController@ship');
