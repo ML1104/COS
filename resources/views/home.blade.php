@@ -8,13 +8,26 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <table class="table-bordered text-center">
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Contact Email</th>
+                        </tr>
+                        @if($jobs)
+                            @foreach($jobs as $job)
+                                <tr>
+                                    <td>{{ $job->title }}</td>
+                                    <td>{{ $job->description }}</td>
+                                    <td>{{ $job->email }}</td>
+                                </tr>
+                            @endforeach
 
-                    You are logged in!
+                        @else
+
+                        <div>Nothing Here</div>
+                        @endif
+                    </table>
                 </div>
             </div>
         </div>

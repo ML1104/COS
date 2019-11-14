@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Job;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,13 +24,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $jobs = Job::all();
+        return view('home')->with('jobs',$jobs);
     }
 
     public function create()
     {
-        //
-
         return view('form');
+    }
+
+    public function post(Request $request)
+    {
+        Job::create([
+           'title' => $request->title,
+           'description' => $request->description,
+           'email' => $request->email
+        ]);
+
+        return redirect('/home');
     }
 }

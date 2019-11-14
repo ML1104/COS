@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <h1>Create New Job Offer</h1>
+            <h3 class="mb-5">Create New Job Offer</h3>
             <div class="col-md-8"></div>
             <form action="/jobs" method="post">
                 {{csrf_field()}}
